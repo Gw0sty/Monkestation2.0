@@ -5787,7 +5787,6 @@
 /turf/open/floor/iron,
 /area/station/cargo/storage)
 "bqC" = (
-/obj/machinery/seed_extractor,
 /obj/effect/turf_decal/bot,
 /obj/structure/railing{
 	dir = 1
@@ -50110,7 +50109,6 @@
 /turf/open/floor/iron,
 /area/station/hallway/primary/fore)
 "lPs" = (
-/obj/machinery/biogenerator,
 /obj/effect/turf_decal/bot,
 /obj/structure/railing{
 	dir = 1
@@ -61766,10 +61764,19 @@
 /turf/open/floor/iron/dark,
 /area/station/science/explab)
 "oJj" = (
-/obj/structure/reagent_dispensers/watertank/high,
 /obj/effect/turf_decal/delivery/white{
 	color = "#52B4E9"
 	},
+/obj/structure/railing{
+	dir = 4;
+	layer = 4.1;
+	pixel_x = 5
+	},
+/obj/structure/railing{
+	dir = 1
+	},
+/obj/structure/reagent_dispensers/watertank/high,
+/obj/item/reagent_containers/cup/watering_can,
 /obj/item/reagent_containers/cup/watering_can,
 /obj/item/reagent_containers/cup/watering_can,
 /obj/structure/railing{
@@ -92157,7 +92164,6 @@
 /turf/open/floor/iron,
 /area/station/hallway/secondary/exit/departure_lounge)
 "vZo" = (
-/obj/machinery/smartfridge,
 /obj/effect/turf_decal/bot,
 /obj/structure/railing{
 	dir = 1

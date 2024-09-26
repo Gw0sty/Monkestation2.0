@@ -1995,10 +1995,11 @@
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 8
 	},
-/obj/item/book/manual/botanical_lexicon,
-/obj/item/book/manual/botanical_lexicon,
-/obj/item/book/manual/botanical_lexicon,
-/obj/item/book/manual/botanical_lexicon,
+/obj/item/botanical_lexicon,
+/obj/item/botanical_lexicon,
+/obj/item/botanical_lexicon,
+/obj/item/botanical_lexicon,
+/obj/machinery/smartfridge/disks,
 /turf/open/floor/iron/dark/corner{
 	dir = 1
 	},
@@ -3959,6 +3960,10 @@
 /obj/structure/reagent_dispensers/wall/virusfood/directional/east,
 /obj/effect/turf_decal/trimline/green/filled/end{
 	dir = 4
+	},
+/obj/machinery/smartfridge/disks{
+	pixel_x = 8;
+	pixel_y = 15
 	},
 /turf/open/floor/iron/white,
 /area/station/medical/virology)
