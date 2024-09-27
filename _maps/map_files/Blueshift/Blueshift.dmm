@@ -1995,10 +1995,10 @@
 /obj/effect/turf_decal/trimline/green/filled/corner{
 	dir = 8
 	},
-/obj/item/botanical_lexicon,
-/obj/item/botanical_lexicon,
-/obj/item/botanical_lexicon,
-/obj/item/botanical_lexicon,
+/obj/item/book/manual/botanical_lexicon,
+/obj/item/book/manual/botanical_lexicon,
+/obj/item/book/manual/botanical_lexicon,
+/obj/item/book/manual/botanical_lexicon,
 /obj/machinery/smartfridge/disks,
 /turf/open/floor/iron/dark/corner{
 	dir = 1
