@@ -50,6 +50,7 @@ const BASEICONS = {
   'Shaft Miner': 'digging',
   'Station Engineer': 'gears',
   'Syndicate Operative': 'dragon',
+  'Signal Technician': 'signal',
   Virologist: 'virus',
   Warden: 'handcuffs',
 } as const;
