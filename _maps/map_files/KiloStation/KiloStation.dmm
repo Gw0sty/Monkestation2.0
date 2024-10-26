@@ -65072,8 +65072,8 @@
 	id_tag = "BSdoor";
 	name = "Nanotrasen Representative's Office"
 	},
-/obj/effect/mapping_helpers/airlock/access/all/command/captain,
 /obj/machinery/door/firedoor,
+/obj/effect/mapping_helpers/airlock/access/all/admin/general,
 /turf/open/floor/iron/dark,
 /area/station/command/heads_quarters/nt_rep)
 "uyR" = (

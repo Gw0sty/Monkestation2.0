@@ -104,6 +104,7 @@
 		ACCESS_WEAPONS,
 		ACCESS_CENT_GENERAL,
 		ACCESS_CENT_LIVING,
+		ACCESS_CENT_TELEPORTER, // Required for boxstation office.
 		)
 	extra_access = list(
 		ACCESS_BAR,
