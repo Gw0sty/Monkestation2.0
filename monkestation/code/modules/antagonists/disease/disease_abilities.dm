@@ -1,4 +1,3 @@
-
 /*
 Abilities that can be purchased by disease mobs. Most are just passive symptoms that will be
 added to their disease, but some are active abilites that affect only the target the overmind

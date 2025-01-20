@@ -5,14 +5,7 @@
 	viable_mobtypes = list(/mob/living/carbon/human)
 	var/mob/camera/disease/overmind
 	var/disease_id
-	spread_flags = DISEASE_SPREAD_BLOOD|DISEASE_SPREAD_CONTACT_FLUIDS|DISEASE_SPREAD_CONTACT_SKIN|DISEASE_SPREAD_AIRBORNE
-
-	var/list/anti = list(
-			ANTIGEN_BLOOD	= 0,
-			ANTIGEN_COMMON	= 0,
-			ANTIGEN_RARE	= 1,
-			ANTIGEN_ALIEN	= 2,
-			)
+	spread_flags = DISEASE_SPREAD_BLOOD|DISEASE_SPREAD_CONTACT_FLUIDS
 
 /datum/disease/acute/sentient_disease/New()
 	..()
