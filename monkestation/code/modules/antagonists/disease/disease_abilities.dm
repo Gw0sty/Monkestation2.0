@@ -1,4 +1,4 @@
-/*
+
 /*
 Abilities that can be purchased by disease mobs. Most are just passive symptoms that will be
 added to their disease, but some are active abilites that affect only the target the overmind
@@ -79,16 +79,16 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 		D.adapt_cooldown()
 	D.purchased_abilities[src] = TRUE
 	for(var/V in (D.disease_instances+D.disease_template))
-		var/datum/disease/advance/sentient_disease/SD = V
+		var/datum/disease/acute/sentient_disease/SD = V
 		if(symptoms)
 			for(var/T in symptoms)
 				var/datum/symptom/S = new T()
 				SD.symptoms += S
 				S.OnAdd(SD)
-				if(SD.processing)
+				/*if(SD.processing)
 					if(S.Start(SD))
 						S.next_activation = world.time + rand(S.symptom_delay_min * 10, S.symptom_delay_max * 10)
-			SD.Refresh()
+			SD.Refresh() */
 	for(var/T in actions)
 		var/datum/action/A = new T()
 		A.Grant(D)
@@ -108,17 +108,17 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 		D.adapt_cooldown()
 	D.purchased_abilities -= src
 	for(var/V in (D.disease_instances+D.disease_template))
-		var/datum/disease/advance/sentient_disease/SD = V
+		var/datum/disease/acute/sentient_disease/SD = V
 		if(symptoms)
 			for(var/T in symptoms)
 				var/datum/symptom/S = locate(T) in SD.symptoms
 				if(S)
 					SD.symptoms -= S
 					S.OnRemove(SD)
-					if(SD.processing)
+					/*if(SD.processing)
 						S.End(SD)
 					qdel(S)
-			SD.Refresh()
+			SD.Refresh()*/
 	for(var/T in actions)
 		var/datum/action/A = locate(T) in D.actions
 		qdel(A)
@@ -170,7 +170,7 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 	to_chat(our_disease, span_notice("You force [host.real_name] to cough."))
 	host.emote("cough")
 	if(host.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
-		var/datum/disease/advance/sentient_disease/disease_datum = our_disease.hosts[host]
+		var/datum/disease/acute/sentient_disease/disease_datum = our_disease.hosts[host]
 		disease_datum.spread(2)
 	return TRUE
 
@@ -209,7 +209,7 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 	to_chat(our_disease, span_notice("You force [host.real_name] to sneeze."))
 	host.emote("sneeze")
 	if(host.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
-		var/datum/disease/advance/sentient_disease/disease_datum = our_disease.hosts[host]
+		var/datum/disease/acute/sentient_disease/disease_datum = our_disease.hosts[host]
 		for(var/mob/living/nearby_mob in oview(4, disease_datum.affected_mob))
 			if(!is_source_facing_target(disease_datum.affected_mob, nearby_mob))
 				continue
@@ -368,4 +368,3 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 /datum/disease_ability/symptom/medium/nano_destroy
 	symptoms = list(/datum/symptom/nano_destroy)
 
-*/

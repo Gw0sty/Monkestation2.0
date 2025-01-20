@@ -1,4 +1,4 @@
-/datum/disease/advance/sentient_disease
+/*/datum/disease/advance/sentient_disease
 	form = "Virus"
 	name = "Sentient Virus"
 	desc = "An apparently sentient virus, extremely adaptable and resistant to outside sources of mutation."
@@ -63,3 +63,4 @@
 	var/datum/reagent/D1 = GLOB.chemical_reagents_list[cures[1]]
 	var/datum/reagent/D2 = GLOB.chemical_reagents_list[cures[2]]
 	cure_text = "[D1.name] and [D2.name]"
+*/

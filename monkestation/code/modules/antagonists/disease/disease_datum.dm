@@ -1,4 +1,4 @@
-/*/datum/antagonist/disease
+/datum/antagonist/disease
 	name = "Sentient Disease"
 	roundend_category = "diseases"
 	antagpanel_category = ANTAG_GROUP_BIOHAZARDS
@@ -101,4 +101,3 @@
 		if(L.onCentCom() || L.onSyndieBase())
 			return TRUE
 	return FALSE
-*/
