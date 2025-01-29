@@ -2,7 +2,7 @@
 #define FREEMOVE_TIME (2 MINUTES)
 
 /*
-A mob of type /mob/camera/disease is an overmind coordinating at least one instance of /datum/disease/acute/sentient_disease
+A mob of type /mob/camera/disease is an overmind coordinating at least one instance of /datum/disease/acute/premade/sentient_disease
 that has infected a host. All instances in a host will be synchronized with the stats of the overmind's disease_template. Any
 samples outside of a host will retain the stats they had when they left the host, but infecting a new host will cause
 the new instance inside the host to be updated to the template's stats.
@@ -38,7 +38,7 @@ the new instance inside the host to be updated to the template's stats.
 	var/mob/living/following_host
 	var/list/disease_instances
 	var/list/hosts //this list is associative, affected_mob -> disease_instance
-	var/datum/disease/acute/sentient_disease/disease_template
+	var/datum/disease/acute/premade/sentient_disease/disease_template
 
 	var/total_points = 0
 	var/points = 0
@@ -63,7 +63,7 @@ the new instance inside the host to be updated to the template's stats.
 	purchased_abilities = list()
 	unpurchased_abilities = list()
 
-	disease_template = new /datum/disease/acute/sentient_disease()
+	disease_template = new /datum/disease/acute/premade/sentient_disease()
 	disease_template.overmind = src
 	qdel(SSdisease.archive_diseases[disease_template.GetDiseaseID()])
 	SSdisease.archive_diseases[disease_template.GetDiseaseID()] = disease_template //important for stuff that uses disease IDs
@@ -81,7 +81,7 @@ the new instance inside the host to be updated to the template's stats.
 	QDEL_NULL(adaptation_menu_action)
 	disease_template = null
 	for(var/V in GLOB.sentient_disease_instances)
-		var/datum/disease/acute/sentient_disease/S = V
+		var/datum/disease/acute/premade/sentient_disease/S = V
 		if(S.overmind == src)
 			S.overmind = null
 	browser = null
@@ -222,7 +222,7 @@ the new instance inside the host to be updated to the template's stats.
 	return FALSE
 
 /mob/camera/disease/proc/force_infect(mob/living/L)
-	var/datum/disease/acute/sentient_disease/V = disease_template.Copy()
+	var/datum/disease/acute/premade/sentient_disease/V = disease_template.Copy()
 	var/result = L.ForceContractDisease(V, FALSE, TRUE)
 	if(result && freemove)
 		end_freemove()
@@ -244,7 +244,7 @@ the new instance inside the host to be updated to the template's stats.
 		deltimer(freemove_end_timerid)
 	set_sight(SEE_SELF)
 
-/mob/camera/disease/proc/add_infection(datum/disease/acute/sentient_disease/V)
+/mob/camera/disease/proc/add_infection(datum/disease/acute/premade/sentient_disease/V)
 	disease_instances += V
 	hosts[V.affected_mob] = V
 	total_points = max(total_points, disease_instances.len)
@@ -266,7 +266,7 @@ the new instance inside the host to be updated to the template's stats.
 		set_following(V.affected_mob)
 	refresh_adaptation_menu()
 
-/mob/camera/disease/proc/remove_infection(datum/disease/acute/sentient_disease/V)
+/mob/camera/disease/proc/remove_infection(datum/disease/acute/premade/sentient_disease/V)
 	if(QDELETED(src))
 		disease_instances -= V
 		hosts -= V.affected_mob
@@ -343,7 +343,7 @@ the new instance inside the host to be updated to the template's stats.
 		adaptation_menu()
 
 /mob/camera/disease/proc/adaptation_menu()
-	var/datum/disease/acute/sentient_disease/DT = disease_template
+	var/datum/disease/acute/premade/sentient_disease/DT = disease_template
 	if(!DT)
 		return
 	var/list/dat = list()

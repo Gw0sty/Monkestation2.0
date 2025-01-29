@@ -78,7 +78,7 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 		D.adapt_cooldown()
 	D.purchased_abilities[src] = TRUE
 	for(var/V in (D.disease_instances+D.disease_template))
-		var/datum/disease/acute/sentient_disease/SD = V
+		var/datum/disease/acute/premade/sentient_disease/SD = V
 		if(symptoms)
 			for(var/T in symptoms)
 				var/datum/symptom/S = new T()
@@ -107,7 +107,7 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 		D.adapt_cooldown()
 	D.purchased_abilities -= src
 	for(var/V in (D.disease_instances+D.disease_template))
-		var/datum/disease/acute/sentient_disease/SD = V
+		var/datum/disease/acute/premade/sentient_disease/SD = V
 		if(symptoms)
 			for(var/T in symptoms)
 				var/datum/symptom/S = locate(T) in SD.symptoms
@@ -169,7 +169,7 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 	to_chat(our_disease, span_notice("You force [host.real_name] to cough."))
 	host.emote("cough")
 	if(host.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
-		var/datum/disease/acute/sentient_disease/disease_datum = our_disease.hosts[host]
+		var/datum/disease/acute/premade/sentient_disease/disease_datum = our_disease.hosts[host]
 		disease_datum.spread(2)
 	return TRUE
 
@@ -208,7 +208,7 @@ new /datum/disease_ability/symptom/powerful/heal/oxygen,
 	to_chat(our_disease, span_notice("You force [host.real_name] to sneeze."))
 	host.emote("sneeze")
 	if(host.CanSpreadAirborneDisease()) //don't spread germs if they covered their mouth
-		var/datum/disease/acute/sentient_disease/disease_datum = our_disease.hosts[host]
+		var/datum/disease/acute/premade/sentient_disease/disease_datum = our_disease.hosts[host]
 		for(var/mob/living/nearby_mob in oview(4, disease_datum.affected_mob))
 			if(!is_source_facing_target(disease_datum.affected_mob, nearby_mob))
 				continue
