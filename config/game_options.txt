@@ -15,10 +15,6 @@ REVIVAL_BRAIN_LIFE -1
 ## Comment this out if you want OOC to be automatically disabled during the round, it will be enabled during the lobby and after the round end results.
 OOC_DURING_ROUND
 
-## LOOC
-## Comment this out to disable LOOC
-LOOC_ENABLED
-
 ## EMOJI ###
 ## Comment this out if you want to disable emojis
 EMOJIS
@@ -37,7 +33,7 @@ COMMENDATION_PERCENT_POLL 0.05
 ## To speed things up make the number negative, to slow things down, make the number positive.
 
 ## These modify the run/walk speed of all mobs before the mob-specific modifiers are applied.
-SPRINT_DELAY 1.2
+SPRINT_DELAY 1.4
 RUN_DELAY 1.8
 WALK_DELAY 4
 
@@ -48,23 +44,22 @@ WALK_DELAY 4
 ##MULTIPLICATIVE_MOVESPEED /mob/living/carbon/human 0
 ##MULTIPLICATIVE_MOVESPEED /mob/living/silicon/robot 0
 ##MULTIPLICATIVE_MOVESPEED /mob/living/carbon/alien 0
-##MULTIPLICATIVE_MOVESPEED /mob/living/basic/slime 0
+##MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal/slime 0
 MULTIPLICATIVE_MOVESPEED /mob/living/simple_animal 0
-MULTIPLICATIVE_MOVESPEED /mob/living/basic 0
 
 
 ## NAMES ###
 ## If uncommented this adds a random surname to a player's name if they only specify one name.
-HUMANS_NEED_SURNAMES
+#HUMANS_NEED_SURNAMES
 
 ## If uncommented, this forces all players to use random names !and appearances!.
 #FORCE_RANDOM_NAMES
 
 ## Unhash this to turn on automatic reopening of a player's job if they suicide at roundstart
-#REOPEN_ROUNDSTART_SUICIDE_ROLES
+REOPEN_ROUNDSTART_SUICIDE_ROLES
 
 ## Unhash to enable reopening of command level positions
-#REOPEN_ROUNDSTART_SUICIDE_ROLES_COMMAND_POSITIONS
+REOPEN_ROUNDSTART_SUICIDE_ROLES_COMMAND_POSITIONS
 
 ## Define the delay for roles to be reopened after the round starts in seconds.
 ## Has a minimum delay of 30 seconds, though it's suggested to keep over 1 min
@@ -72,7 +67,7 @@ HUMANS_NEED_SURNAMES
 #REOPEN_ROUNDSTART_SUICIDE_ROLES_DELAY 240
 
 ## Unhash to enable a printed command report for reopened roles listing what roles were reopened.
-#REOPEN_ROUNDSTART_SUICIDE_ROLES_COMMAND_REPORT
+REOPEN_ROUNDSTART_SUICIDE_ROLES_COMMAND_REPORT
 
 
 ## ALERT LEVELS ###
@@ -101,9 +96,9 @@ SHUTTLE_REFUEL_DELAY 12000
 ## Variables calculate how number of antagonists will scale to population.
 ## Used as (Antagonists = Population / Coeff)
 ## Set to 0 to disable scaling and use default numbers instead.
-TRAITOR_SCALING_COEFF 6
-BROTHER_SCALING_COEFF 6
-CHANGELING_SCALING_COEFF 6
+TRAITOR_SCALING_COEFF 12
+BROTHER_SCALING_COEFF 12
+CHANGELING_SCALING_COEFF 12
 
 ## Variables calculate how number of open security officer positions will scale to population.
 ## Used as (Officers = Population / Coeff)
@@ -135,7 +130,7 @@ ALLOW_LATEJOIN_ANTAGONISTS
 #DISABLE_WAROPS
 
 ## Uncomment to enable dynamic ruleset config file.
-DYNAMIC_CONFIG_ENABLED
+#DYNAMIC_CONFIG_ENABLED
 
 ## RANDOM EVENTS ###
 ## Comment this out to disable random events during the round.
@@ -163,7 +158,7 @@ ALLOW_AI_MULTICAM
 
 ## Secborg ###
 ## Uncomment to prevent the security cyborg model from being chosen
-#DISABLE_SECBORG
+DISABLE_SECBORG
 
 ## Peacekeeper Borg ###
 ## Uncomment to prevent the peacekeeper cyborg model from being chosen
@@ -201,7 +196,7 @@ MINIMAL_ACCESS_THRESHOLD 20
 #SECURITY_HAS_MAINT_ACCESS
 
 ## Uncomment to give everyone maint access.
-#EVERYONE_HAS_MAINT_ACCESS
+EVERYONE_HAS_MAINT_ACCESS
 
 ## Comment this out this to make security officers spawn in departmental security posts
 #SEC_START_BRIG
@@ -215,7 +210,7 @@ DEPSEC_ACCESS_LEVEL 1
 
 ## GHOST INTERACTION ###
 ## Uncomment to let ghosts spin chairs. You may be wondering why this is a config option. Don't ask.
-#GHOST_INTERACTION
+GHOST_INTERACTION
 
 ## NEAR-DEATH EXPERIENCE ###
 ## Comment this out to disable mobs hearing ghosts when unconscious and very close to death
@@ -235,7 +230,7 @@ NEAR_DEATH_EXPERIENCE
 ## Set to 4 for "specified", silicons will start with an existing lawset. (If no specified lawset is identified, the AI will spawn with asimov.)
 
 
-DEFAULT_LAWS 0
+DEFAULT_LAWS 2
 
 ## SILICON ASIMOV SUPERIORITY OVERRIDE ###
 ## This makes "Asimov Superiority" show up as a perk for humans in the character creation menu even if asimov is not the default lawset, such as when used with asimov++
@@ -248,7 +243,7 @@ DEFAULT_LAWS 0
 ## See datums\ai_laws.dm for the full law lists
 ## IE, SPECIFIED_LAWS asimovpp, SPECIFIED_LAWS robocop, SPECIFIED_LAWS antimov
 
-SPECIFIED_LAWS asimovpp
+#SPECIFIED_LAWS crewsimovpp
 
 ## RANDOM LAWS ##
 ## ------------------------------------------------------------------------------------------
@@ -256,20 +251,24 @@ SPECIFIED_LAWS asimovpp
 ## See datums\ai_laws.dm for the full law lists
 
 ## standard-ish laws. These are fairly ok to run
-RANDOM_LAWS asimov
-RANDOM_LAWS asimovpp
+#RANDOM_LAWS crewsimovpp
+#RANDOM_LAWS asimov
+#RANDOM_LAWS asimovpp
 RANDOM_LAWS paladin
 RANDOM_LAWS robocop
 RANDOM_LAWS corporate
 
 ## Quirky laws. Shouldn't cause too much harm
-#RANDOM_LAWS hippocratic
-#RANDOM_LAWS maintain
+RANDOM_LAWS hippocratic
+RANDOM_LAWS maintain
 #RANDOM_LAWS liveandletlive
 #RANDOM_LAWS peacekeeper
-#RANDOM_LAWS reporter
-#RANDOM_LAWS hulkamania
-#RANDOM_LAWS ten_commandments
+RANDOM_LAWS reporter
+RANDOM_LAWS hulkamania
+RANDOM_LAWS ten_commandments
+RANDOM_LAWS painter
+RANDOM_LAWS tyrant
+#RANDOM_LAWS overlord
 
 ## Bad idea laws. Probably shouldn't enable these
 #RANDOM_LAWS syndie
@@ -347,23 +346,23 @@ ROUNDSTART_RACES human
 
 ## Races that are strictly worse than humans that could probably be turned on without balance concerns
 ROUNDSTART_RACES lizard
-#ROUNDSTART_RACES fly
+ROUNDSTART_RACES fly
 ROUNDSTART_RACES moth
-ROUNDSTART_RACES tundra
 ROUNDSTART_RACES plasmaman
 #ROUNDSTART_RACES shadow
 ROUNDSTART_RACES oozeling
 ROUNDSTART_RACES ipc
 ROUNDSTART_RACES simian
 ROUNDSTART_RACES arachnid
+ROUNDSTART_RACES goblin
+ROUNDSTART_RACES floran
 ROUNDSTART_RACES apid
 ROUNDSTART_RACES satyr
 ROUNDSTART_RACES ornithid
+ROUNDSTART_RACES tundra
 
 ## Races that are better than humans in some ways, but worse in others
 ROUNDSTART_RACES ethereal
-ROUNDSTART_RACES goblin
-ROUNDSTART_RACES floran
 #ROUNDSTART_RACES jelly
 #ROUNDSTART_RACES abductor
 #ROUNDSTART_RACES synth
@@ -434,8 +433,9 @@ OVERFLOW_JOB Assistant
 ## Overflow slot cap. Set to -1 for unlimited. If limited, it will still open up if every other job is full.
 OVERFLOW_CAP -1
 
-## Enables Spooktober jobs.
-SPOOKTOBER_ENABLED
+## Starlight for exterior walls and breaches. Uncomment for starlight!
+## This is disabled by default to make testing quicker, should be enabled on production servers or testing servers messing with lighting
+STARLIGHT
 
 ## Uncomment to bring back old grey suit assistants instead of the now default rainbow colored assistants.
 #GREY_ASSISTANTS
@@ -476,7 +476,7 @@ LAVALAND_BUDGET 60
 ICEMOON_BUDGET 90
 
 ## Space Ruin Budget
-Space_Budget 16
+Space_Budget 32
 
 ## Time in ds from when a player latejoins till the arrival shuttle docks at the station
 ## Must be at least 30. At least 55 recommended to be visually/aurally appropriate
@@ -502,17 +502,14 @@ ROUNDSTART_TRAITS
 ## Uncomment to disable human moods.
 #DISABLE_HUMAN_MOOD
 
-## Enable night shifts
+## Enable night shifts ##
 #ENABLE_NIGHT_SHIFTS
 
-## The shift start hour in 24-hour (0-23) notation
-SHIFT_TIME_START_HOUR 7
+## Enable randomized shift start times##
+RANDOMIZE_SHIFT_TIME
 
-## Sets shift time to server time at roundstart. Overrides SHIFT_TIME_START_HOUR
+## Sets shift time to server time at roundstart. Overridden by RANDOMIZE_SHIFT_TIME ##
 #SHIFT_TIME_REALTIME
-
-## Enable randomized shift start times. Overrides SHIFT_TIME_REALTIME and SHIFT_TIME_START_HOUR
-#RANDOMIZE_SHIFT_TIME
 
 ## A cap on how many monkeys may be created via monkey cubes
 MONKEYCAP 64
@@ -521,20 +518,20 @@ MONKEYCAP 64
 RATCAP 64
 
 ## Maximum fine for a citation
-MAXFINE 2000
+MAXFINE 10000
 
 ## Which role is required of playtime to be eligible for Maintenance Drones
 ## See code/__DEFINES/preferences.dm for available options, use the string portion without quotes
 #DRONE_REQUIRED_ROLE Silicon
 
 ## How many played hours of DRONE_REQUIRED_ROLE required to be a Maintenance Done
-#DRONE_ROLE_PLAYTIME 14
+DRONE_ROLE_PLAYTIME 1
 
 ## Whether native FoV is enabled for all people.
 #NATIVE_FOV
 
 ## Whether circuit sounds are allowed to be played or not.
-#DISALLOW_CIRCUIT_SOUNDS
+# DISALLOW_CIRCUIT_SOUNDS
 
 ## Comment if you wish to enable title music playing at the lobby screen. This flag is disabled by default to facilitate better code testing on local machines.
 ## Do keep in mind that this flag will not affect individual player's preferences: if they opt-out on your server, it will never play for them.
@@ -545,18 +542,9 @@ MAXFINE 2000
 ## don't need (or want) this.
 #GIVE_TUTORIALS_WITHOUT_DB
 
-## Put the name of your custom currency here
-METACURRENCY_NAME Metacoin
+TWITCH_KEY LLX11829XSS3
 
-TWITCH_KEY mrhouse
-
-## How long (in minutes) after roundstart should the server start an automatic crew transfer vote?
-## Defaults to 90 minutes. Set to 0 to completely disable automatic crew transfer votes.
-TRANSFER_VOTE_TIME 90
-
-## If players vote against a crew transfer, how long (in minutes) until another automatic transfer vote will be initiated?
-## Defaults to 30 minutes. Set to 0 to completely disable subsequent crew transfer votes.
-SUBSEQUENT_TRANSFER_VOTE_TIME 30
+SPOOKTOBER_ENABLED
 
 ## Gamemode configurations
 
@@ -588,19 +576,13 @@ MAJOR_POINT_THRESHOLD 90
 ROLESET_POINT_THRESHOLD 120
 OBJECTIVES_POINT_THRESHOLD 130
 
-## Allows the storyteller to scale event frequencies based on population
-ALLOW_STORYTELLER_POP_SCALING
+TWITCH_LINK_WEBSITE https://twitchlink.monkestation.com/twitchoauth/login
 
-## Thresholds that population frequency scalling penalize up to.
-MUNDANE_POP_SCALE_THRESHOLD 10
-MODERATE_POP_SCALE_THRESHOLD 15
-MAJOR_POP_SCALE_THRESHOLD 40
-ROLESET_POP_SCALE_THRESHOLD 45
-OBJECTIVES_POP_SCALE_THRESHOLD 40
+## Is LOOC enabled
+LOOC_ENABLED
 
-## The maximum penalties population scalling will apply to the tracks for having less pop than POP_SCALE_THRESHOLD. This is treated as percentages
-MUNDANE_POP_SCALE_PENALTY 30
-MODERATE_POP_SCALE_PENALTY 30
-MAJOR_POP_SCALE_PENALTY 30
-ROLESET_POP_SCALE_PENALTY 30
-OBJECTIVES_POP_SCALE_PENALTY 30
+#ECLIPSE
+
+#METRICS_ENABLED
+
+DISABLE_ANTAG_OPT_IN_PREFERENCES
