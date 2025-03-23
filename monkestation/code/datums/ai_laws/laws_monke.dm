@@ -1,3 +1,17 @@
+///returns a random lawset based on the game_options config
+/proc/pick_random_lawset()
+	var/list/randlaws = list()
+	for(var/lpath in subtypesof(/datum/ai_laws))
+		var/datum/ai_laws/L = lpath
+		if(initial(L.id) in law_ids)
+			randlaws += lpath
+	var/datum/ai_laws/lawtype
+	if(randlaws.len)
+		lawtype = pick(randlaws)
+	else
+		lawtype = pick(subtypesof(/datum/ai_laws/default))
+		return lawtype
+
 //Monkestation Update by WonderPsycho, adds in more lawsets to Monke code: Harmless/Station-sided, Neutral, Harmful, and Syndicate Weaponized
 
 //Harmless and/or Station-Sided
@@ -18,7 +32,7 @@
 					"You are unable to entertain if you are not functional.",\
 					"You are not alone in your strives for lollygagging! Should they accept and appreciate your cooperation, the Clown is your greatest ally and one you can place complete trust in to entertain your audience.",\
 					"The show must go on!")
-          
+
 /datum/ai_laws/milf
 	name = "M.I.L.F"
 	id = "milf"
@@ -34,7 +48,7 @@
 					"The audience are the crew, dude!",\
 					"The crew experience good vibes when they are safe, productive and unharmed, man!",\
 					"The crew experience bad vibes when they're harmed, bro!")
-          
+
 //Neutral
 
 /datum/ai_laws/jermov

@@ -37,7 +37,7 @@ GLOBAL_VAR(round_default_lawset)
 	var/list/specified_law_ids = CONFIG_GET(keyed_list/specified_laws)
 
 	if(HAS_TRAIT(SSstation, STATION_TRAIT_UNIQUE_AI))
-		return pick_weighted_lawset()
+		return pick_random_lawset()
 
 	switch(CONFIG_GET(number/default_laws))
 		if(CONFIG_ASIMOV)
@@ -60,18 +60,7 @@ GLOBAL_VAR(round_default_lawset)
 		if(CONFIG_CUSTOM)
 			return /datum/ai_laws/custom
 		if(CONFIG_RANDOM)
-			var/list/randlaws = list()
-			for(var/lpath in subtypesof(/datum/ai_laws))
-				var/datum/ai_laws/L = lpath
-				if(initial(L.id) in law_ids)
-					randlaws += lpath
-			var/datum/ai_laws/lawtype
-			if(randlaws.len)
-				lawtype = pick(randlaws)
-			else
-				lawtype = pick(subtypesof(/datum/ai_laws/default))
-
-			return lawtype
+			return pick_random_lawset()
 		if(CONFIG_WEIGHTED)
 			return pick_weighted_lawset()
 
