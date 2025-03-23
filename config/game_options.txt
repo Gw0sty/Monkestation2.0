@@ -251,7 +251,7 @@ DEFAULT_LAWS 2
 ## See datums\ai_laws.dm for the full law lists
 
 ## standard-ish laws. These are fairly ok to run
-RANDOM_LAWS crewsimovpp
+#RANDOM_LAWS crewsimovpp
 #RANDOM_LAWS asimov
 #RANDOM_LAWS asimovpp
 RANDOM_LAWS paladin
@@ -265,7 +265,7 @@ RANDOM_LAWS maintain
 #RANDOM_LAWS peacekeeper
 RANDOM_LAWS reporter
 RANDOM_LAWS hulkamania
-#RANDOM_LAWS ten_commandments
+RANDOM_LAWS ten_commandments
 RANDOM_LAWS painter
 RANDOM_LAWS tyrant
 #RANDOM_LAWS overlord
@@ -291,28 +291,24 @@ LAW_WEIGHT custom,0
 ## Unique AI station trait uses weights so we don't want asimov
 LAW_WEIGHT asimov,0
 LAW_WEIGHT asimovpp,5
-LAW_WEIGHT paladin,0
+LAW_WEIGHT paladin,5
 LAW_WEIGHT paladin5,5
-LAW_WEIGHT robocop,0
-LAW_WEIGHT corporate,0
-LAW_WEIGHT hippocratic,0
+LAW_WEIGHT robocop,5
+LAW_WEIGHT corporate,5
+LAW_WEIGHT hippocratic,5
 LAW_WEIGHT maintain,5
 LAW_WEIGHT liveandletlive,5
-LAW_WEIGHT peacekeeper,0
+LAW_WEIGHT peacekeeper,5
 LAW_WEIGHT ten_commandments,5
 LAW_WEIGHT nutimov,5
 
 ## Quirky laws. Shouldn't cause too much harm
-LAW_WEIGHT reporter,0
+LAW_WEIGHT reporter,3
 LAW_WEIGHT hulkamania,3
-LAW_WEIGHT tyrant,0
+LAW_WEIGHT tyrant,3
 LAW_WEIGHT overlord,3
-LAW_WEIGHT painter,0
+LAW_WEIGHT painter,3
 LAW_WEIGHT dungeon_master,3
-LAW_WEIGHT honkertech,3
-LAW_WEIGHT henchmen,3
-LAW_WEIGHT milf,3
-LAW_WEIGHT dj,3
 
 ## Bad idea laws. Probably shouldn't enable these
 LAW_WEIGHT syndie,0
