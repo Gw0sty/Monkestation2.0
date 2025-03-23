@@ -254,31 +254,32 @@ DEFAULT_LAWS 2
 #RANDOM_LAWS crewsimovpp
 #RANDOM_LAWS asimov
 #RANDOM_LAWS asimovpp
-RANDOM_LAWS paladin
+#RANDOM_LAWS paladin
+#RANDOM_LAWS paladin5
 RANDOM_LAWS robocop
-RANDOM_LAWS corporate
+#RANDOM_LAWS corporate
+RANDOM_LAWS hippocratic
+#RANDOM_LAWS maintain
+#RANDOM_LAWS liveandletlive
+RANDOM_LAWS peacekeeper
 
 ## Quirky laws. Shouldn't cause too much harm
-RANDOM_LAWS hippocratic
-RANDOM_LAWS maintain
-#RANDOM_LAWS liveandletlive
-#RANDOM_LAWS peacekeeper
-RANDOM_LAWS reporter
-RANDOM_LAWS hulkamania
+#RANDOM_LAWS nutimov
+#RANDOM_LAWS reporter
+#RANDOM_LAWS hulkamania
 RANDOM_LAWS ten_commandments
-RANDOM_LAWS painter
+#RANDOM_LAWS painter
 RANDOM_LAWS tyrant
 #RANDOM_LAWS overlord
+#RANDOM_LAWS dungeon_master
 
 ## Bad idea laws. Probably shouldn't enable these
 #RANDOM_LAWS syndie
 #RANDOM_LAWS ninja
 #RANDOM_LAWS antimov
+#RANDOM_LAWS balance
 #RANDOM_LAWS thermodynamic
 #RANDOM_LAWS drone
-
-## meme laws. Honk
-#RANDOM_LAWS buildawall
 
 ## If weighted laws are selected (DEFAULT_LAWS = 3),
 ## then an AI's starting laws will be determined by the weights of these values
@@ -289,26 +290,27 @@ LAW_WEIGHT custom,0
 
 ## standard-ish laws. These are fairly ok to run
 ## Unique AI station trait uses weights so we don't want asimov
+LAW_WEIGHT crewsimovpp,0
 LAW_WEIGHT asimov,0
-LAW_WEIGHT asimovpp,5
-LAW_WEIGHT paladin,5
-LAW_WEIGHT paladin5,5
-LAW_WEIGHT robocop,5
+LAW_WEIGHT asimovpp,0
+LAW_WEIGHT paladin,3
+LAW_WEIGHT paladin5,3
+LAW_WEIGHT robocop,0
 LAW_WEIGHT corporate,5
-LAW_WEIGHT hippocratic,5
+LAW_WEIGHT hippocratic,0
 LAW_WEIGHT maintain,5
 LAW_WEIGHT liveandletlive,5
-LAW_WEIGHT peacekeeper,5
-LAW_WEIGHT ten_commandments,5
-LAW_WEIGHT nutimov,5
+LAW_WEIGHT peacekeeper,0
 
 ## Quirky laws. Shouldn't cause too much harm
+LAW_WEIGHT nutimov,3
 LAW_WEIGHT reporter,3
 LAW_WEIGHT hulkamania,3
-LAW_WEIGHT tyrant,3
-LAW_WEIGHT overlord,3
-LAW_WEIGHT painter,3
-LAW_WEIGHT dungeon_master,3
+LAW_WEIGHT ten_commandments,0
+LAW_WEIGHT painter,1
+LAW_WEIGHT overlord,0
+LAW_WEIGHT tyrant,1
+LAW_WEIGHT dungeon_master,1
 
 ## Bad idea laws. Probably shouldn't enable these
 LAW_WEIGHT syndie,0
@@ -316,7 +318,6 @@ LAW_WEIGHT ninja,0
 LAW_WEIGHT antimov,0
 LAW_WEIGHT balance,0
 LAW_WEIGHT thermodynamic,0
-LAW_WEIGHT buildawall,0
 LAW_WEIGHT drone,0
 
 ##------------------------------------------------
