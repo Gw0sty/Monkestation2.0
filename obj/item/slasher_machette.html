@@ -1,0 +1,17 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><base href="../../"><link rel="stylesheet" href="dmdoc.css"><title>/obj/item/slasher_machette - MonkeStation 2.0</title></head><body><header><a href="index.html">MonkeStation 2.0</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a> — <a href="obj/item/slasher_machette.html#var">Var Details</a> - <a href="obj/item/slasher_machette.html#proc">Proc Details</a></header><main><h1>slasher_machette <aside>/<a href="obj.html">obj</a>/<a href="obj/item.html">item</a>/<a href="obj/item/slasher_machette.html">slasher_machette</a></aside> <a href="https://github.com/notghosti/Monkestation2.0/blob/2d41c3775b3b904e4745d7c0344ca0734d96808e/monkestation/code/modules/blood_for_the_blood_gods/slasher/abilities/recall_machette.dm#L32"><img src="git.png" width="16" height="16" title="monkestation/code/modules/blood_for_the_blood_gods/slasher/abilities/recall_machette.dm 32"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><h2>Vars</h2></td></tr><tr><th><a href="obj/item/slasher_machette.html#var/pre_throw_force">pre_throw_force</a></th><td>Used to keep track of the force we had before throws. After the throw, <code>throwforce</code> is
+restored to this.</td></tr><tr><td colspan="2"><h2>Procs</h2></td></tr><tr><th><a href="obj/item/slasher_machette.html#proc/throw_impact">throw_impact</a></th><td>var/turf/below_turf = get_turf(arguments[4]) // the turf below the person throwing
+var/turf_light_level = below_turf.get_lumcount()
+var/area/ismaints = get_area(below_turf)
+pre_throw_force = throwforce
+if(istype(ismaints, /area/station/maintenance))
+throwforce = 1.1 * throwforce
+else
+throwforce = throwforce * (max(clamp((1 - turf_light_level), 0, 1)))</td></tr></table><h2 id="var">Var Details</h2><h3 id="var/pre_throw_force"><aside class="declaration">var </aside>pre_throw_force <a href="https://github.com/notghosti/Monkestation2.0/blob/2d41c3775b3b904e4745d7c0344ca0734d96808e/monkestation/code/modules/blood_for_the_blood_gods/slasher/abilities/recall_machette.dm#L55"><img src="git.png" width="16" height="16" title="monkestation/code/modules/blood_for_the_blood_gods/slasher/abilities/recall_machette.dm 55"></a></h3><p>Used to keep track of the force we had before throws. After the throw, <code>throwforce</code> is
+restored to this.</p><h2 id="proc">Proc Details</h2><h3 id="proc/throw_impact">throw_impact<aside>(/<a href="atom.html">atom</a>/hit_atom, /<a href="datum.html">datum</a>/<a href="datum/thrownthing.html">thrownthing</a>/throwingdatum)  <a href="https://github.com/notghosti/Monkestation2.0/blob/2d41c3775b3b904e4745d7c0344ca0734d96808e/monkestation/code/modules/blood_for_the_blood_gods/slasher/abilities/recall_machette.dm#L84"><img src="git.png" width="16" height="16" title="monkestation/code/modules/blood_for_the_blood_gods/slasher/abilities/recall_machette.dm 84"></a></aside></h3><p>var/turf/below_turf = get_turf(arguments[4]) // the turf below the person throwing
+var/turf_light_level = below_turf.get_lumcount()
+var/area/ismaints = get_area(below_turf)
+pre_throw_force = throwforce
+if(istype(ismaints, /area/station/maintenance))
+throwforce = 1.1 * throwforce
+else
+throwforce = throwforce * (max(clamp((1 - turf_light_level), 0, 1)))</p></main><footer>tgstation.dme <a href="https://github.com/notghosti/Monkestation2.0/tree/2d41c3775b3b904e4745d7c0344ca0734d96808e">2d41c37</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>

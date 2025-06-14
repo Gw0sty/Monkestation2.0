@@ -1,0 +1,24 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><link rel="stylesheet" href="dmdoc.css"><title>monkestation/README.md - MonkeStation 2.0</title></head><body><header><a href="index.html">MonkeStation 2.0</a> - <a href="index.html#modules">Modules</a> - <a href="index.html#types">Types</a></header><main><h1>Modularization <aside>monkestation/README.md</aside> <a href="https://github.com/notghosti/Monkestation2.0/blob/2d41c3775b3b904e4745d7c0344ca0734d96808e/monkestation/README.md"><img src="git.png" width="16" height="16" title="monkestation/README.md"></a></h1><table class="summary" cellspacing="0"><tr><td colspan="2"><p>&quot;things will be a lot less ambiguous and messy.&quot; they said.</p>
+<p>From this point on, we are killing modularization. Do not follow modularization guidelines.</p>
+<p>See the following announcement from the discord below</p>
+<p>--</p>
+<h1 id="we-need-to-talk-about-modularization-on-monkestation">We need to talk about modularization on Monkestation.</h1>
+<p>Modularization. It's a core part of our codebase and we've preached it a lot in the past before, especially in the days we we're just a baby fork of Tgstation. It was supposed to be our savior for keeping things balanced with features pulled from upstream (upstream being TG). But a lot of time and commits have passed since then, <strong>and late last year we deforked from TG due to how many problems it caused.</strong></p>
+<h2 id="we-are-behind-17k-commits-comparing-the-following-commits">We are behind 17k commits,  comparing the following commits</h2>
+<p>TG Head right now - <a href="https://github.com/tgstation/tgstation/commit/a375d5331d1c2edb7c3a9046c2a9f6a97614c2ce">a375d5331d1c2edb7c3a9046c2a9f6a97614c2ce</a>
+Monkestation Head right now - <a href="https://github.com/Monkestation/Monkestation2.0/commit/0ea11c6ea013cdc912e601a5e39db1db7ffcc5d4">0ea11c6ea013cdc912e601a5e39db1db7ffcc5d4</a></p>
+<pre><code>git rev-list --left-right --count 
+a375d5331d1c2edb7c3a9046c2a9f6a97614c2ce...0ea11c6ea013cdc912e601a5e39db1db7ffcc5d4
+
+17810   10794
+</code></pre>
+<p>Left: Commits behind - Right: Commits ahead</p>
+<p>And by the way, each commit is essentially a PR since TG merges PRs via &quot;Squash and Merge&quot; (Divided by like 2 since CI changelog actions are their own commits, BUT STILL, thats about 8.8k PRs). Suffice to say, we're very.. very out of date, and there's no chance at saving this. So with that said...</p>
+<h1 id="we-are-killing-modularization">We are killing modularization</h1>
+<p>Any PRs going forward <strong>should not participate in modularization or follow its guidelines</strong>. </p>
+<p>Modularization aimed to make things easier and give coders less of a headache, but as I just said, we've deviated from TG so much that it's starting to bite us in the ass with how our features are spread between <code>code</code> and <code>monkestation/code</code>.</p>
+<p>We’re not doing a mass deletion/demodularization (yet). Stuff that’s modular will stay that way until it’s touched again by whoever feels like demodularizing. But new stuff? Put it in <code>code</code>. You are unleashed.</p>
+<h1 id="tl-dr">TL;DR</h1>
+<ul>
+<li>We're killing modularization, do not follow the guidelines from this point on.</li>
+</ul></td></tr></table></main><footer>tgstation.dme <a href="https://github.com/notghosti/Monkestation2.0/tree/2d41c3775b3b904e4745d7c0344ca0734d96808e">2d41c37</a> (master) — <a href="https://github.com/SpaceManiac/SpacemanDMM/blob/master/crates/dmdoc/README.md">dmdoc 1.10.0</a></footer></body></html>
